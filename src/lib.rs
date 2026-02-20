@@ -1,0 +1,10 @@
+pub mod cli;
+pub mod client;
+pub mod collections;
+pub mod config;
+pub mod display;
+pub mod error;
+pub mod history;
+pub mod request;
+pub mod response;
+pub mod tui;

@@ -1,0 +1,58 @@
+{
+  "name": "example",
+  "description": "Starter collection using JSONPlaceholder",
+  "requests": {
+    "list-posts": {
+      "name": "List Posts",
+      "description": "Fetch all blog posts",
+      "request": {
+        "method": "GET",
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "headers": {},
+        "query": { "userId": "1" },
+        "body": null
+      }
+    },
+    "get-post": {
+      "name": "Get Post",
+      "description": "Fetch a single post by ID",
+      "request": {
+        "method": "GET",
+        "url": "https://jsonplaceholder.typicode.com/posts/1",
+        "headers": {},
+        "query": {},
+        "body": null
+      }
+    },
+    "create-post": {
+      "name": "Create Post",
+      "description": "Create a new blog post",
+      "request": {
+        "method": "POST",
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "query": {},
+        "body": {
+          "json": {
+            "title": "Hello RustRest",
+            "body":  "Built with Rust.",
+            "userId": 1
+          }
+        }
+      }
+    },
+    "delete-post": {
+      "name": "Delete Post",
+      "description": "Delete a post by ID",
+      "request": {
+        "method": "DELETE",
+        "url": "https://jsonplaceholder.typicode.com/posts/1",
+        "headers": {},
+        "query": {},
+        "body": null
+      }
+    }
+  }
+}
