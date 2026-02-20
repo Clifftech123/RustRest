@@ -1,6 +1,59 @@
 [package]
-name = "RustRest"
-version = "0.1.0"
-edition = "2024"
+name        = "rustrest"
+version     = "0.1.0"
+edition     = "2021"
+description = "A modern, fast HTTP client for the terminal"
+license     = "MIT"
+
+[lib]
+name = "rustrest"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rr"
+path = "src/main.rs"
 
 [dependencies]
+# CLI parsing
+clap = { version = "4", features = ["derive", "env", "color"] }
+
+# HTTP client
+reqwest = { version = "0.12", features = ["json", "multipart", "stream", "cookies", "gzip"] }
+
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Serialization
+serde      = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+
+# Error handling
+anyhow    = "1"
+thiserror = "1"
+
+# Terminal colours & formatting
+colored   = "2"
+indicatif = "0.17"
+
+# Platform config / data directories
+dirs = "5"
+
+# Timestamps
+chrono = { version = "0.4", features = ["serde"] }
+
+# URL parsing
+url = "2"
+
+# TUI — Phase 3
+ratatui   = "0.27"
+crossterm = "0.27"
+
+[dev-dependencies]
+tokio-test = "0.4"
+mockito    = "1"
+
+[profile.release]
+opt-level     = 3
+lto           = true
+codegen-units = 1
+strip         = true
